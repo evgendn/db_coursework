@@ -10,7 +10,8 @@ insert into driver (
 		('Alex King', '1964-04-18', 'jdyu492nx8', '2018-07-14', true),
 		('Sam Ganji', '1978-08-23', '7yhj03jsl4', '2017-03-26', true),
 		('Victor Reznov', '1983-03-03', 'aj37nsi3m3', '2019-06-12', true),
-		('Aizek Clark', '1992-06-11', '10ej38ur38', '2020-05-22', true);
+		('Aizek Clark', '1992-06-11', '10ej38ur38', '2020-05-22', true),
+		('Matt Preston', '1987-07-21', 'djr392ms90', '2016-11-03', true);
 
 
 insert into car_model (
