@@ -58,8 +58,7 @@ insert into payment_type (
 		type_name
 	) values 
 		('cash'),
-		('credit card'),
-		('bonuses');
+		('credit card');
 
 
 insert into cc_agent (
@@ -86,17 +85,18 @@ insert into status (
 insert into customer (
 		email,
 		password,
-		credit_card_number
+		credit_card_number, 
+		balance
 	) values
-		('qwer2020@mail.com', 'ksdhbfbsldkfe', '1111111111111111'),
-		('sadmanhello@mail.com', 'akkhhej394mld', '2222222222222222'),
-		('candy93@mail.com', '324nsadlij465', '3333333333333333'),
-		('house13@ya.com', 'ndfjdfdflkj91', '4444444444444444'),
-		('alex@ml.com', 'drnejflicjdlr', '5555555555555555'),
-		('updown@mail.com', 'n43od94nkc904', '6666666666666666'),
-		('setlink@mail.com', 'nklfjh93no40e', '7777777777777777'),
-		('dleknr@mail.com', '34lji@34we534', '8888888888888888'),
-		('summer@gmail.com', '4jbf9503kck30', '9999999999999999');
+		('qwer2020@mail.com', 'ksdhbfbsldkfe', '1111111111111111', 50.00),
+		('sadmanhello@mail.com', 'akkhhej394mld', '2222222222222222', 200.00),
+		('candy93@mail.com', '324nsadlij465', '3333333333333333', 150.00),
+		('house13@ya.com', 'ndfjdfdflkj91', '4444444444444444', 0.00),
+		('alex@ml.com', 'drnejflicjdlr', '5555555555555555', 0.00),
+		('updown@mail.com', 'n43od94nkc904', '6666666666666666', 623.00),
+		('setlink@mail.com', 'nklfjh93no40e', '7777777777777777', 27.0),
+		('dleknr@mail.com', '34lji@34we534', '8888888888888888', 483.23),
+		('summer@gmail.com', '4jbf9503kck30', '9999999999999999', 343.20);
 
 
 insert into cab_ride (
@@ -112,27 +112,27 @@ insert into cab_ride (
 		payment_type_id,
 		price
 	) values
-		(1, 3, '12:53:42', '13:15:34',
+		(1, 3, '2016-11-10 12:53:42', '2016-11-10 13:15:34',
 			'linkoln 14th', '239082403872', 
 			'marystreet 83th', '232324872643',
 			false, 1, '15'),
 
-		(2, 1, '03:05:42', '03:45:34',
+		(2, 1, '2016-09-12 03:05:42', '2016-09-12 03:45:34',
 			'subway 93th', '934834035544', 
 			'brooklin str 83th', '9495029203',
 			false, 2, '35'),
 
-		(3, 3, '12:53:42', '13:15:34',
+		(3, 3, '2016-12-05 12:53:42', '2016-12-05 13:15:34',
 			'marystreet 83th', '232324872643', 
 			'linkoln 14th', '239082403872',
 			false, 1, '15'),
 
-		(4, 5, '20:23:42', '20:52:34',
+		(4, 5, '2016-10-21 20:23:42', '2016-10-21 20:52:34',
 			'greenbay 98th', '485064058956', 
 			'broadway 3th', '187239834094',
-			true, 3, '32'),
+			true, 2, '32'),
 
-		(5, 9, '21:53:42', '22:13:34',
+		(5, 9, '2016-11-29 21:53:42', '2016-11-29 22:13:34',
 			'redcapes 34th', '342343403872', 
 			'marystreet 83th', '232324872643',
 			false, 2, '8');
@@ -146,8 +146,8 @@ insert into cab_ride_status (
 		shift_id,
 		status_details
 	) values 
-		(1, 3, '12:53:42', 5, 1, ''),
-		(2, 1, '02:55:12', 4, 2, '3 person'),
-		(3, 2, '12:49:31', 3, 3, ''),
-		(4, 5, '20:52:34', 2, 4, 'drunk customer'),
-		(5, 4, '22:13:34', 1, 5, 'ok');
+		(1, 3, '2016-11-10 12:53:42', 5, 1, ''),
+		(2, 1, '2016-09-12 02:55:12', 4, 2, '3 person'),
+		(3, 2, '2016-12-05 12:49:31', 3, 3, ''),
+		(4, 5, '2016-10-21 20:52:34', 2, 4, 'drunk customer'),
+		(5, 4, '2016-11-29 22:13:34', 1, 5, 'ok');
