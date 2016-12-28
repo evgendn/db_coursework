@@ -3,7 +3,8 @@
 drop function top_3_workers();
 
 create or replace function top_3_workers()
-	returns setof record as $$
+	returns setof record 
+as $$
 	select d.full_name, count(t.driver_id) as cnt
   		from (
     		select *
@@ -25,7 +26,8 @@ select top_3_workers();
 drop function get_cancel_ratio();
 
 create or replace function get_cancel_ratio()
-	returns float as $$
+	returns float 
+as $$
 declare
 	canceled_id integer;
 	number_of_canceled integer;
@@ -49,7 +51,8 @@ select get_cancel_ratio();
 drop function get_full_information(name varchar);
 
 create or replace function get_full_information(name varchar)
-	returns setof record as $$
+	returns setof record 
+as $$
 	select dr.id, dr.full_name, 
 		   dr.birth_date, dr.driving_licence_number, 
 		   dr.expire_date, dr.working, 

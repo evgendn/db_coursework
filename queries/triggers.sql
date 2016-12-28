@@ -59,27 +59,29 @@ before delete
 -- происходит списание цены за поездку  
 -- с баланаса покупателя.
 
-drop function meet_bill();
+-- Мб дропнуть этот триггер?
 
-create trigger meet_bill
-before insert
-	on cab_ride_status execute procedure meet_bill();
+-- drop function meet_bill();
 
-create or replace procedure meet_bill()
-	returns trigger as $$
-	if new.status_id = select id from status 
-							where status_name = 'canceled'
-		and  then
-		update customer as c
-			set balance = customer.balance - cr.price
-			from cab_ride
-				where   
-	end if;
+-- create trigger meet_bill
+-- before insert
+-- 	on cab_ride_status execute procedure meet_bill();
 
-$$ language plpgsql;
+-- create or replace procedure meet_bill()
+-- 	returns trigger as $$
+-- 	if new.status_id = select id from status 
+-- 							where status_name = 'canceled'
+-- 		and  then
+-- 		update customer as c
+-- 			set balance = customer.balance - cr.price
+-- 			from cab_ride
+-- 				where   
+-- 	end if;
+
+-- $$ language plpgsql;
 
 
-select cr.id, cr.customer_id, cr.price, crs.status_id 
-	from cab_ride as cr 
-	left join cab_ride_status as crs 
-		on (crs.cab_ride_id = cr.id);
+-- select cr.id, cr.customer_id, cr.price, crs.status_id 
+-- 	from cab_ride as cr 
+-- 	left join cab_ride_status as crs 
+-- 		on (crs.cab_ride_id = cr.id);

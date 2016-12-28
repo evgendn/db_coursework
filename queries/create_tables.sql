@@ -7,6 +7,7 @@ create table driver (
 	working boolean not null default(false),
 
 	primary key(id),
+	constraint uniq_licence_num unique(driving_licence_number),
 	constraint valid_licence_number check(
 		driving_licence_number ~ '^([0-9]|[a-zA-Z]){10}$')
 );
@@ -27,6 +28,7 @@ create table cab (
 	active boolean not null default(false),
 
 	primary key(id),
+	constraint uniq_licence_plate unique(license_plate)
 	foreign key(car_model_id) references car_model(id) on delete cascade,
 	foreign key(owner_id) references driver(id) on delete cascade
 );
@@ -84,6 +86,8 @@ create table customer (
 	balance numeric(5, 2) default(0.0),
 
 	primary key(id),
+	constraint uniq_email unique(email),
+	constraint uniq_credit_card_number unique(credit_card_number),
 	constraint valid_balance check(balance >= 0.00)
 	-- Не пашет регулярка в базе, в дебаггере норм работает!
 	-- constraint ck_validate_email check (
