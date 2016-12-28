@@ -63,4 +63,3 @@ create or replace function get_full_information(name varchar)
 $$ language sql;
 
 select get_full_information('Jerald Broflovski');
-
