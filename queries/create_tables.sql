@@ -28,7 +28,7 @@ create table cab (
 	active boolean not null default(false),
 
 	primary key(id),
-	constraint uniq_licence_plate unique(license_plate)
+	constraint uniq_licence_plate unique(license_plate),
 	foreign key(car_model_id) references car_model(id) on delete cascade,
 	foreign key(owner_id) references driver(id) on delete cascade
 );

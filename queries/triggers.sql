@@ -54,34 +54,3 @@ create trigger insert_about_delete
 before delete 
 	on car_model execute procedure insert_about_delete();
 
-
--- После добавления статуса поездки - ended 
--- происходит списание цены за поездку  
--- с баланаса покупателя.
-
--- Мб дропнуть этот триггер?
-
--- drop function meet_bill();
-
--- create trigger meet_bill
--- before insert
--- 	on cab_ride_status execute procedure meet_bill();
-
--- create or replace procedure meet_bill()
--- 	returns trigger as $$
--- 	if new.status_id = select id from status 
--- 							where status_name = 'canceled'
--- 		and  then
--- 		update customer as c
--- 			set balance = customer.balance - cr.price
--- 			from cab_ride
--- 				where   
--- 	end if;
-
--- $$ language plpgsql;
-
-
--- select cr.id, cr.customer_id, cr.price, crs.status_id 
--- 	from cab_ride as cr 
--- 	left join cab_ride_status as crs 
--- 		on (crs.cab_ride_id = cr.id);

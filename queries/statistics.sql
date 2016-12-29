@@ -46,7 +46,7 @@ $$ language plpgsql;
 select get_cancel_ratio();
 
 
-3. Вывод полной информации о водителе при вводе имени.
+-- 3. Вывод полной информации о водителе при вводе имени.
 
 drop function get_full_information(name varchar);
 
@@ -65,4 +65,4 @@ as $$
 			where dr.full_name = name; 
 $$ language sql;
 
-select get_full_information('Jerald Broflovski');
+select get_full_information('Victor Reznov');

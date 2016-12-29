@@ -1,6 +1,6 @@
 -- 1. Функция создания статусов поездки.
 
-drop function create or replace function create_cab_ride_status(
+drop function  create_cab_ride_status(
 		cab_ride_id_ integer,
 		status_id_ integer,
 		cc_agent_id_ integer,
@@ -28,7 +28,7 @@ as $$
 $$ language sql;
 
 
--- select create_cab_ride_status(3, 4, 3, 3, 'function is working');
+-- select create_cab_ride_status(3=, 4, 3, 3, 'function is working');
 
 
 -- 2. Функция проверки истечения срока действия 
@@ -55,5 +55,5 @@ begin
 end;
 $$ language plpgsql; 
 
-select check_expire_date_on_valid();
+-- select check_expire_date_on_valid();
 
